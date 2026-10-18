@@ -1,70 +1,64 @@
 # biz-speak-skill
 
-An AI agent skill that rewrites task-completion output from technical/code language into business language.
+An AI agent skill that rewrites technical output into business language.
+把 AI 的技术输出改写成业务语言。
 
-## What it does
+[English](#english) · [中文](#中文)
 
-When an AI agent finishes a task, it often reports in technical terms: file names, function names, implementation details. This skill rewrites that output into business language that non-technical stakeholders can understand.
+---
 
-**Before** (technical):
-> Added `validate_email()` in `services/auth.py` line 42. Updated 3 test cases in `test_auth.py`.
+## English
 
-**After** (business):
-> User registration now validates email format. Related tests have been updated.
+When an AI agent finishes a task, it reports in file names, function names, and implementation details. This skill rewrites that output into business language a non-technical reader can act on. Unshipped plans work too.
 
-## Installation
+**Install** — copy the whole `biz-speak` folder into your platform's skills directory:
 
-### Cursor
+| Platform | Path |
+|---|---|
+| Cursor | `.cursor/skills/biz-speak/` |
+| Claude | `.claude/skills/biz-speak/` |
+| Qoder | your project's skills directory |
+| Other | adapt to your platform's skill format |
 
-Copy `SKILL.md` to `.cursor/skills/biz-speak/SKILL.md` in your project.
-
-### Qoder
-
-Copy `SKILL.md` to your project's skills directory, or install via the Qoder skill marketplace (coming soon).
-
-### Claude
-
-Copy `SKILL.md` to `.claude/skills/biz-speak/SKILL.md` in your project.
-
-### Other platforms
-
-The skill is a plain Markdown file. Adapt it to your platform's skill/instruction format.
-
-## Usage
-
-After an AI agent completes a task and produces technical output, invoke:
+**Usage**
 
 ```
 /biz-speak
 ```
 
-The agent will rewrite the output in business language.
+**Docs**
 
-## Output structure
+- [`SKILL.md`](SKILL.md) — the rules: output structure, task-type variations, transformation rules, anti-patterns
+- [`examples/`](examples/) — bug fix, new feature, refactor, plan
 
-Every rewritten output contains three elements:
+---
 
-1. **Business** — what this means in business terms
-2. **Behavior** — how the system now behaves (user perspective)
-3. **Impact** — who is affected, what to do next
+## 中文
 
-The structure adapts to task type:
+AI 完成任务后，产出的总结通常充满技术细节：文件名、函数名、实现方式。这个技能把那段输出改写成业务方能直接使用的业务语言。尚未执行的实施计划也适用。
 
-| Task type | Structure |
+**安装** —— 复制整个 `biz-speak` 目录到对应平台的技能目录：
+
+| 平台 | 路径 |
 |---|---|
-| Bug fix | Rule → Behavior change → Impact scope |
-| New feature | Capability → User actions → Entry point |
-| Refactor | What changed → Behavior unchanged → Why |
+| Cursor | `.cursor/skills/biz-speak/` |
+| Claude | `.claude/skills/biz-speak/` |
+| Qoder | 项目的技能目录 |
+| 其他 | 按该平台的技能格式改造 |
 
-## Examples
+**用法**
 
-See the [`examples/`](examples/) directory:
+```
+/biz-speak
+```
 
-- [Bug fix](examples/bug-fix.md) — conditional logic bug in a questionnaire
-- [New feature](examples/new-feature.md) — Excel export for reports
-- [Refactor](examples/refactor.md) — extracting risk stratification module
-- [Plan](examples/plan.md) — auto-saving questionnaire drafts before it ships
+**说明文档**
 
-## License
+- [`SKILL.md`](SKILL.md) —— 规则本体：输出结构、任务类型变体、改写规则、反面例子
+- [`examples/`](examples/) —— 修 bug、新功能、重构、计划
+
+---
+
+## License · 许可
 
 MIT
