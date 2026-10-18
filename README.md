@@ -63,6 +63,7 @@ See the [`examples/`](examples/) directory:
 - [Bug fix](examples/bug-fix.md) — conditional logic bug in a questionnaire
 - [New feature](examples/new-feature.md) — Excel export for reports
 - [Refactor](examples/refactor.md) — extracting risk stratification module
+- [Plan](examples/plan.md) — auto-saving questionnaire drafts before it ships
 
 ## License
 
